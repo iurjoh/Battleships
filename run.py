@@ -4,32 +4,51 @@
 
 
 from random import randint
+size_board = 6
 
-def instructions():
+
+# def instructions():
+#     """
+#     starting with some instructions
+#     """
+# print("-----------------------------------")
+# print("Welcome to BATTLESHIPS GAME!")
+# print("Board size: 5. Number of ships: 4.")
+# print("-----------------------------------")
+# instructions()
+
+
+# # creating a user name
+# def user_name():
+#     """
+#     Creating a user name
+#     """
+#     user_name_string = input ("Please commander, enter your name here: ")
+#     print(f"Welcome Commander {user_name_string}")
+# user_name()
+
+
+def print_board(board):
     """
-    starting with some instructions
+    Creating a 2d board to the game
     """
-print("-----------------------------------")
-print("Welcome to BATTLESHIPS GAME!")
-print("Board size: 5. Number of ships: 4.")
-print("-----------------------------------")
-instructions()
-# creating a user name
-def user_name():
-    """
-    Creating a user name 
-    """
-    user_name_string = input ("Please commander, enter your name here: ")
-    print(f"Welcome Commander {user_name_string}")
-user_name()
+    print("    0 1 2 3 4 5 ")
+    print("  +-------------+")
+    for row in range(6):
+        board.append(["-"] * 6)
+    letter = 0
+    for row in range(5):
+        print(chr(letter + 65), end= " | ")
+        # 65 for letter "A" and "end =" makes line one in the top of the other
+        for column in range(len(board[letter])):
+            print(board[letter][column], end= " ")
+        print("| ")
+        letter += 1
+    print("  +-------------+")
 
+board = []
 
-# # creating a board
-# computer_board = [[" "]*6 for x in range(6)]
-# player_board = [[" "]*6 for x in range(6)]
-
-# def print_board(board):
-
+print_board(board)
 
 # # create ships
 # def create_ships()
