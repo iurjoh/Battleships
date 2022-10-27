@@ -7,25 +7,29 @@ from random import randint
 size_board = 6
 
 
-# def instructions():
-#     """
-#     starting with some instructions
-#     """
-# print("-----------------------------------")
-# print("Welcome to BATTLESHIPS GAME!")
-# print("Board size: 5. Number of ships: 4.")
-# print("-----------------------------------")
-# instructions()
+def instructions():
+    """
+    starting with some instructions
+    """
+print("----------------------------------------------")
+print("         Welcome to BATTLESHIPS GAME!         ")
+print("Board size: 5x5. Number of ships: 4. Shots: 10")
+print("----------------------------------------------")
+instructions()
 
 
-# # creating a user name
-# def user_name():
-#     """
-#     Creating a user name
-#     """
-#     user_name_string = input ("Please commander, enter your name here: ")
-#     print(f"Welcome Commander {user_name_string}")
-# user_name()
+# creating a user name
+def user_name():
+    """
+    Creating a user name
+    """
+    user_name_string = input ("Please commander, enter your name here: ")
+    print(f"Welcome Commander {user_name_string},")
+    print("This is the battlefield. Enemy ships are hidden.")
+    print("You have only 10 chances to sink all 4 enemies.")
+    print("Attack with intelligence and precision.")
+    print(f"We count on you Commander {user_name_string} to win this war!")
+user_name()
 
 
 def print_board(board):
