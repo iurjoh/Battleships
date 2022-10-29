@@ -28,7 +28,7 @@ def user_name():
     print("We have spoted the battlefield. Enemy ships are hidden.")
     print("You have only 10 chances to sink all 4 enemies.")
     print("Attack with intelligence and precision.")
-    print(f"We count on you Commander {user_name_string} to win this war!")
+    print(f"We count on you Commander {user_name_string} to win this war! \n")
 user_name()
 
 
@@ -69,5 +69,26 @@ print_board(board)
 # # positioning ships on board
 # def pos_ships():
 
-# # counting how many ships were hit
-# def hit_ships():
+# # users guess
+#  - message error:
+#     if is not a word or valid number
+#     if is repeating previous coordinates 
+#     if
+# # def hit_ships():
+
+# # print users guess
+
+# # print if was a hit or not
+
+# # print how many ships still could be hit
+
+# # repeat the loop of guess
+
+# # end game message
+# # win or loss conditions
+
+# # restart button
+
+# # additional features
+# - Play against computer
+# - Score board
