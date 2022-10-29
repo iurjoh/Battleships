@@ -23,9 +23,9 @@ def user_name():
     """
     Creating a user name
     """
-    user_name_string = input ("Please commander, enter your name here: ")
+    user_name_string = input ("Please Commander, enter your name here: ")
     print(f"Welcome Commander {user_name_string},")
-    print("This is the battlefield. Enemy ships are hidden.")
+    print("We have spoted the battlefield. Enemy ships are hidden.")
     print("You have only 10 chances to sink all 4 enemies.")
     print("Attack with intelligence and precision.")
     print(f"We count on you Commander {user_name_string} to win this war!")
