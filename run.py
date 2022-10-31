@@ -3,34 +3,6 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
 
-# from random import randint
-
-# board = []
-
-# for x in range (0, 5):
-#     board.append(["0"] * 5)
-    
-# def print_board(board):
-#     for row in board:
-#         print(" ".join(row))
-        
-# def random_row(board):
-#     return randint(0, len(board) - 1)
-
-# def random_col(board):
-#     return randint(0, len(board[0]) - 1)
-    
-# ship_row = random_row(board)
-# ship_col = random_col(board)
-
-# guess_row = int(input ("Guess row: "))
-# guess_col = int(input ("Guess column: "))
-
-# print(ship_row)
-# print(ship_col)
-# print(board)
-
-
 from random import randint
 size_board = 6
 ships = 4
@@ -44,7 +16,7 @@ def instructions():
     """
 print("----------------------------------------------")
 print("         Welcome to BATTLESHIPS GAME!         ")
-print("Board size: 5x5. Number of ships: 4. Shots: 10")
+print("Board size: 6x6. Number of ships: 4. Shots: 10")
 print("----------------------------------------------")
 instructions()
 
@@ -72,7 +44,7 @@ def print_board(board):
     for row in range(6):
         board.append(["-"] * 6)
     letter = 0
-    for row in range(5):
+    for row in range(6):
         print(chr(letter + 65), end= " | ")
         # 65 for letter "A" and "end =" makes line one in the top of the other
         for column in range(len(board[letter])):
@@ -80,7 +52,7 @@ def print_board(board):
         print("| ")
         letter += 1
     print("  +-------------+")
-    print_board(board)
+print_board(board)
 
 
 def random_row(board):
@@ -107,8 +79,21 @@ guess_row = int(input ("Choose a row:"))
 guess_col = int(input ("Choose a column:"))
 
 
-print(ship_row)
-print(ship_col)
+# print(ship_row)
+# print(ship_col)
+# used to test the game during coding
+
+if guess_row == ship_row and guess_col == ship_col:
+    print("Bull's-eye Commander! You sank one ship!")
+
+elif guess_row not in range(6) or guess_col not in range(6):
+        print("Sorry Commander, these coordinates are outside the battlefield.")
+else:
+    print("Commander you missed the target")
+    board[guess_row][guess_col] = "X"
+    print_board(board)
+    
+    
 
 
 #  - message error:
