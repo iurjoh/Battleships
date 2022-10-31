@@ -14,7 +14,7 @@ def instructions():
     """
 print("----------------------------------------------")
 print("         Welcome to BATTLESHIPS GAME!         ")
-print("Board size: 6x6. Number of ships: 4. Shots: 10")
+print("Board size: 6x6. Number of ships: 1. Shots: 10")
 print("----------------------------------------------")
 instructions()
 
@@ -26,7 +26,7 @@ def user_name():
     user_name_string = input ("Please Commander, enter your name here: ")
     print(f"Welcome Commander {user_name_string},")
     print("We have spoted the battlefield. Enemy ships are hidden.")
-    print("You have only 10 chances to sink all 4 enemies.")
+    print("You have only 10 chances to sink your enemy.")
     print("Attack with intelligence and precision.")
     print(f"We count on you Commander {user_name_string} to win this war! \n")
 
@@ -39,10 +39,10 @@ def print_board(board):
     """
     print("    0 1 2 3 4 5 ")
     print("  +-------------+")
-    for row in range(6):
-        board.append(["-"] * 6)
+    for row in range(5):
+        board.append(["-"] * 5)
     letter = 0
-    for row in range(6):
+    for row in range(5):
         print(chr(letter + 65), end= " | ")
         # 65 for letter "A" and "end =" makes line one in the top of the other
         for column in range(len(board[letter])):
@@ -57,13 +57,13 @@ def random_row(board):
     """
     Randomly placing a ship in a row
     """
-    return randint(0, 5)
+    return randint(0, 4)
 
 def random_col(board):
     """
     Randomly placing a ship in a column
     """
-    return randint(0, 5)
+    return randint(0, 4)
     
 ship_row = random_row(board)
 ship_col = random_col(board)
@@ -90,12 +90,12 @@ while shots < 10:
         break
 
     # If the shoot are outside the battlefield
-    elif guess_row not in range(6) or guess_col not in range(6):
-        print("Sorry Commander, these coordinates are outside the battlefield.")
+    elif guess_row not in range(5) or guess_col not in range(5):
+        print("Sorry, these coordinates are outside the battlefield.")
 
     # If was already choosen
     elif board[guess_row][guess_col] == "X":
-        print("Commander, This coordinate has already been assigned.")
+        print("Sorry, this coordinate has already been assigned.")
 
 
     # If you missed the target
@@ -105,7 +105,10 @@ while shots < 10:
         print_board(board)
         # Removing a user's chance
         shots += 1
-    
+        print("You already used", shots, "of 10 shots.")
+
+        if shots == 10:
+            print("Commander, we have no more ammo and the enemy has escaped. We lost this battle.")
 
 
 # print how many ships still could be hit
