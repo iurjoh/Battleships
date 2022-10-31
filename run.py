@@ -4,9 +4,7 @@
 
 
 from random import randint
-size_board = 6
-ships = 4
-shots = 10
+
 board = []
 
 
@@ -70,51 +68,53 @@ def random_col(board):
 ship_row = random_row(board)
 ship_col = random_col(board)
 
-
-print("Commander, where should we aim our artillery?")
-"""
-Input for the user's guess
-"""
-guess_row = int(input ("Choose a row:"))
-guess_col = int(input ("Choose a column:"))
-
-
-# print(ship_row)
-# print(ship_col)
 # used to test the game during coding
+print(ship_row)
+print(ship_col)
 
-if guess_row == ship_row and guess_col == ship_col:
-    print("Bull's-eye Commander! You sank one ship!")
+shots = 0
 
-elif guess_row not in range(6) or guess_col not in range(6):
+while shots < 10:
+    print("Commander, where should we aim our artillery?")
+    """
+    Input for the user's guess
+    """
+    guess_row = int(input ("Choose a row:"))
+    guess_col = int(input ("Choose a column:"))
+
+
+    # If the target was hit
+    if guess_row == ship_row and guess_col == ship_col:
+        print("Bull's-eye Commander! You sank one ship!")
+        # After 10 shots
+        break
+
+    # If the shoot are outside the battlefield
+    elif guess_row not in range(6) or guess_col not in range(6):
         print("Sorry Commander, these coordinates are outside the battlefield.")
-else:
-    print("Commander you missed the target")
-    board[guess_row][guess_col] = "X"
-    print_board(board)
+
+    # If was already choosen
+    elif board[guess_row][guess_col] == "X":
+        print("Commander, This coordinate has already been assigned.")
+
+
+    # If you missed the target
+    else:
+        print("Commander you missed the target")
+        board[guess_row][guess_col] = "X"
+        print_board(board)
+        # Removing a user's chance
+        shots += 1
     
-    
 
 
-#  - message error:
-#     if is not a word or valid number
-#     if is repeating previous coordinates 
-#     if
-# # def hit_ships():
+# print how many ships still could be hit
 
-# # print users guess
+# end game message
+# win or loss conditions
 
-# # print if was a hit or not
+# restart button
 
-# # print how many ships still could be hit
-
-# # repeat the loop of guess
-
-# # end game message
-# # win or loss conditions
-
-# # restart button
-
-# # additional features
+# additional features
 # - Play against computer
 # - Score board
