@@ -3,8 +3,39 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
 
+# from random import randint
+
+# board = []
+
+# for x in range (0, 5):
+#     board.append(["0"] * 5)
+    
+# def print_board(board):
+#     for row in board:
+#         print(" ".join(row))
+        
+# def random_row(board):
+#     return randint(0, len(board) - 1)
+
+# def random_col(board):
+#     return randint(0, len(board[0]) - 1)
+    
+# ship_row = random_row(board)
+# ship_col = random_col(board)
+
+# guess_row = int(input ("Guess row: "))
+# guess_col = int(input ("Guess column: "))
+
+# print(ship_row)
+# print(ship_col)
+# print(board)
+
+
 from random import randint
 size_board = 6
+ships = 4
+shots = 10
+board = []
 
 
 def instructions():
@@ -18,7 +49,6 @@ print("----------------------------------------------")
 instructions()
 
 
-# creating a user name
 def user_name():
     """
     Creating a user name
@@ -29,6 +59,7 @@ def user_name():
     print("You have only 10 chances to sink all 4 enemies.")
     print("Attack with intelligence and precision.")
     print(f"We count on you Commander {user_name_string} to win this war! \n")
+
 user_name()
 
 
@@ -49,27 +80,37 @@ def print_board(board):
         print("| ")
         letter += 1
     print("  +-------------+")
-
-board = []
-
-print_board(board)
-
-# # create ships
-# def create_ships()
-#     """
-#     Creating ships on the board suing a random position
-#     """
-#     for ship in range(5):
-#         ship_row, ship_column = randint(0, 6), randint(0, 6)
-#         while board[ship_row][ship_column] == "X":
-#             ship_row, ship_column = randint(0, 6), randint(0, 6)
-#         board[ship_row][ship_column] = "X"
+    print_board(board)
 
 
-# # positioning ships on board
-# def pos_ships():
+def random_row(board):
+    """
+    Randomly placing a ship in a row
+    """
+    return randint(0, 5)
 
-# # users guess
+def random_col(board):
+    """
+    Randomly placing a ship in a column
+    """
+    return randint(0, 5)
+    
+ship_row = random_row(board)
+ship_col = random_col(board)
+
+
+print("Commander, where should we aim our artillery?")
+"""
+Input for the user's guess
+"""
+guess_row = int(input ("Choose a row:"))
+guess_col = int(input ("Choose a column:"))
+
+
+print(ship_row)
+print(ship_col)
+
+
 #  - message error:
 #     if is not a word or valid number
 #     if is repeating previous coordinates 
