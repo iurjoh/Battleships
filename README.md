@@ -119,6 +119,8 @@ Sites such as:
 - [Google](https://www.google.com) for more information on subjects related to the that I had to study during the creation of the site;
 - [Wikipedia](https://en.wikipedia.org/wiki/Main_Page) to understand concepts about Python;
 - [Youtube](https://www.youtube.com/) tutorials to learn using in a practical way some of the methods necessary to implement the desired functions for the game;
+- [Pycodestyle](https://pypi.org/project/pycodestyle/) used to validade my python code;
+- [Extends Class](https://extendsclass.com/python-tester.html) used to test my python code syntax;
 - [Slack](https://slack.com/) communities to ask questions and access answers to questions that I found in the development of the site.
 
 ## Media
