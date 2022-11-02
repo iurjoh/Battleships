@@ -84,9 +84,9 @@ while guesses < 10:
 
     # If the chest was discovered
     if guess_row == chest_row and guess_col == chest_col:
-        print("History may be accurate. But archaeology is precise. - Doug Scott")
-        print("Congratulations, you finally found the treasure!)
-        
+        print("'History may be accurate. But archaeology is precise.' - Doug Scott")
+        print("Congratulations, you finally found the treasure!")
+
         # After 10 guesses
         break
 
@@ -111,11 +111,4 @@ while guesses < 10:
         print("You already used", guesses, "of 10 guesses.")
 
         if guesses == 10:
-            print("Sorry great explorer, but this time you didn't find the treasure.")
-
-
-# additional features
-# restart button
-# - Play against computer
-# - Score board
-# Restart prompt
+            print("Sorry great explorer, but this time you didn't find the treasure!")
