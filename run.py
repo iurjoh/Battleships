@@ -12,10 +12,10 @@ def instructions():
     """
     starting with some instructions
     """
-print("----------------------------------------------")
-print("         Welcome to BATTLESHIPS GAME!         ")
-print("Board size: 6x6. Number of ships: 1. Shots: 10")
-print("----------------------------------------------")
+print("------------------------------------------")
+print("         Welcome to TREASURE HUNT!        ")
+print("Board size: 5x5. Treasure: 1. Chances: 10.")
+print("------------------------------------------")
 instructions()
 
 
@@ -23,12 +23,12 @@ def user_name():
     """
     Creating a user name
     """
-    user_name_string = input ("Please Commander, enter your name here: ")
-    print(f"Welcome Commander {user_name_string},")
-    print("We have spoted the battlefield. Enemy ships are hidden.")
-    print("You have only 10 chances to sink your enemy.")
-    print("Attack with intelligence and precision.")
-    print(f"We count on you Commander {user_name_string} to win this war! \n")
+    user_name_string = input ("Please explorer, enter your name here: ")
+    print(f"Welcome explorer {user_name_string},")
+    print("There is a chest full of treasures, but it's hidden around here.")
+    print("You have only 10 chances to find your treasure.")
+    print("Choose a place to dig with intelligence and precision.")
+    print(f"Good luck, explorer {user_name_string}! \n")
 
 user_name()
 
@@ -37,45 +37,44 @@ def print_board(board):
     """
     Creating a 2d board to the game
     """
-    print("    0 1 2 3 4 5 ")
-    print("  +-------------+")
+    print("    0 1 2 3 4  ")
+    print("  +-----------+")
     for row in range(5):
         board.append(["-"] * 5)
-    letter = 0
+    number = 0
     for row in range(5):
-        print(chr(letter + 65), end= " | ")
-        # 65 for letter "A" and "end =" makes line one in the top of the other
-        for column in range(len(board[letter])):
-            print(board[letter][column], end= " ")
+        print((number), end= " | ")
+        for column in range(len(board[number])):
+            print(board[number][column], end= " ")
         print("| ")
-        letter += 1
-    print("  +-------------+")
+        number += 1
+    print("  +-----------+")
 print_board(board)
 
 
 def random_row(board):
     """
-    Randomly placing a ship in a row
+    Randomly placing a chest in a row
     """
     return randint(0, 4)
 
 def random_col(board):
     """
-    Randomly placing a ship in a column
+    Randomly placing a chest in a column
     """
     return randint(0, 4)
     
-ship_row = random_row(board)
-ship_col = random_col(board)
+chest_row = random_row(board)
+chest_col = random_col(board)
 
 # used to test the game during coding
-print(ship_row)
-print(ship_col)
+print(chest_row)
+print(chest_col)
 
-shots = 0
+guesses = 0
 
-while shots < 10:
-    print("Commander, where should we aim our artillery?")
+while guesses < 10:
+    print("Explorer, where should we dig now?")
     """
     Input for the user's guess
     """
@@ -83,15 +82,18 @@ while shots < 10:
     guess_col = int(input ("Choose a column:"))
 
 
-    # If the target was hit
-    if guess_row == ship_row and guess_col == ship_col:
-        print("Bull's-eye Commander! You sank one ship!")
-        # After 10 shots
+    # If the chest was discovered
+    if guess_row == chest_row and guess_col == chest_col:
+        print("History may be accurate. But archaeology is precise. - Doug Scott")
+        print("Congratulations, you finally found the treasure!)
+        
+        # After 10 guesses
         break
 
     # If the shoot are outside the battlefield
     elif guess_row not in range(5) or guess_col not in range(5):
-        print("Sorry, these coordinates are outside the battlefield.")
+        print("Sorry, these coordinates are outside of the map.")
+
 
     # If was already choosen
     elif board[guess_row][guess_col] == "X":
@@ -100,24 +102,20 @@ while shots < 10:
 
     # If you missed the target
     else:
-        print("Commander you missed the target")
+        print("Ops, there is no treasure here. Try again.")
         board[guess_row][guess_col] = "X"
         print_board(board)
+        
         # Removing a user's chance
-        shots += 1
-        print("You already used", shots, "of 10 shots.")
+        guesses += 1
+        print("You already used", guesses, "of 10 guesses.")
 
-        if shots == 10:
-            print("Commander, we have no more ammo and the enemy has escaped. We lost this battle.")
+        if guesses == 10:
+            print("Sorry great explorer, but this time you didn't find the treasure.")
 
-
-# print how many ships still could be hit
-
-# end game message
-# win or loss conditions
-
-# restart button
 
 # additional features
+# restart button
 # - Play against computer
 # - Score board
+# Restart prompt
