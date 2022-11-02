@@ -68,8 +68,8 @@ chest_row = random_row(board)
 chest_col = random_col(board)
 
 # used to test the game during coding
-print(chest_row)
-print(chest_col)
+# print(chest_row)
+# print(chest_col)
 
 guesses = 0
 
