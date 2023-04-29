@@ -3,7 +3,6 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
 import sys
-import re
 from random import randint
 
 
@@ -173,13 +172,13 @@ def start_game():
     Starts the Treasure Hunt game.
     """
     while True:
-    name = input("Please enter your name (only letters): ")
-    if name.isalpha() and not name.isdigit():
-        # Valid name, proceed with the game
-        break
-    else:
-        # Invalid name, ask again
-        print("Invalid name. Please enter a non-empty name with only letters from A to Z.")
+        name = input("Welcome to Treasure Hunt! Please enter your name (only letters): ")
+        if name.isalpha() and not name.isdigit():
+            # Valid name, proceed with the game
+            break
+        else:
+            # Invalid name, ask again
+            print("Invalid name. Please enter a non-empty name with only letters from A to Z.")
 
     while True:
         print("Please, choose your difficulty level:")
