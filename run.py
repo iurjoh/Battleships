@@ -51,7 +51,7 @@ def get_valid_board_size():
             size = int(size_str)
             if size in [3, 5, 9]:
                 return size
-        print("Invalid input. Please enter a valid board size (3, 5, or 9).")
+        print("Invalid board size. Please enter a valid board size (3, 5, or 9).")
 
 
 def reveal_chest_location(board, chest_row, chest_col):
@@ -74,7 +74,7 @@ def play_game(name, size):
     max_guesses = int(size * 1.5)
 
     print(
-        f"Welcome to the TREASURE HUNT! Board size: {size}x{size}." 
+        f"Board size: {size}x{size}."
         f" Treasure: 1. Guesses: {max_guesses}.")
 
     for guess_num in range(1, max_guesses + 1):
@@ -113,9 +113,8 @@ def play_game(name, size):
             # mark treasure location on board
             board[guess_row][guess_col] = "T"
             print_board(board)
-            print(
-                f'"History may be accurate. But archaeology is precise." - Doug Scott.'
-                f' Congratulations, explorer {name}! You found the treasure!')
+            print('"History may be accurate. But archaeology is precise." - Doug Scott.')
+            print(f"Congratulations, explorer {name}! You found the treasure!")
             restart_game(name, size)
             return
 
@@ -126,7 +125,7 @@ def play_game(name, size):
     print_board(board)
     print(
         f"Sorry, explorer {name}. You didn't find the treasure this time."
-        f"The location of the treasure was ({chest_row}, {chest_col}).")
+        f" The location of the treasure was ({chest_row}, {chest_col}).")
     restart_game(name, size)
 
 
@@ -164,28 +163,34 @@ def restart_game(name, size):
 
 
 # Start the game
-print("Welcome to Treasure Hunt! Please explorer, enter your name:")
-name = input()
 
+def start_game():
+    """
+    Starts the Treasure Hunt game.
+    """
+    print("Welcome to Treasure Hunt! Please explorer, enter your name:")
+    name = input()
 
-while True:
-    print("Please, choose your difficulty level:")
-    print("1. Easy (board size: 3x3)")
-    print("2. Medium (board size: 5x5)")
-    print("3. Hard (board size: 9x9)")
+    while True:
+        print("Please, choose your difficulty level:")
+        print("1. Easy (board size: 3x3)")
+        print("2. Medium (board size: 5x5)")
+        print("3. Hard (board size: 9x9)")
 
-    level_choice = input("Enter your choice (1-3): ")
-    if level_choice == "1":
-        play_game(name, 3)
-        restart_game(name, 3)
-        break
-    elif level_choice == "2":
-        play_game(name, 5)
-        restart_game(name, 5)
-        break
-    elif level_choice == "3":
-        play_game(name, 9)
-        restart_game(name, 9)
-        break
-    else:
-        print("Invalid choice. Please enter a number between 1 and 3.")
+        level_choice = input("Enter your choice (1-3): ")
+        if level_choice == "1":
+            play_game(name, 3)
+            restart_game(name, 3)
+            break
+        elif level_choice == "2":
+            play_game(name, 5)
+            restart_game(name, 5)
+            break
+        elif level_choice == "3":
+            play_game(name, 9)
+            restart_game(name, 9)
+            break
+        else:
+            print("Invalid choice. Please enter a number between 1 and 3.")
+
+start_game()
