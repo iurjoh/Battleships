@@ -3,6 +3,7 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
 import sys
+import re
 from random import randint
 
 
@@ -72,7 +73,7 @@ def play_game(name, size):
     """
     Used in test phase. Must be commented when deploy.
     """
-    # print(f"Chest located at ({chest_row}, {chest_col})")
+    print(f"Chest located at ({chest_row}, {chest_col})")
 
     max_guesses = int(size * 1.5)
 
@@ -171,8 +172,12 @@ def start_game():
     """
     Starts the Treasure Hunt game.
     """
-    print("Welcome to Treasure Hunt! Please explorer, enter your name:")
-    name = input()
+    while True:
+        name = input("Welcome to Treasure Hunt! Please enter your name: ")
+        if not name:
+            print("Name cannot be empty. Please enter a valid name.")
+        else:
+            break
 
     while True:
         print("Please, choose your difficulty level:")
