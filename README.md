@@ -81,11 +81,11 @@ Or when within his 10 chances he manages to find the exact location of the treas
 
 # Tests
 ## Syntax test
-Python syntax checker from Extends Class and Python style guide checker from pycodestyle 2.9.1 were used to test, verify and validate code written in python.
+Python syntax checker from Extends Class and Python style guide checker from flake8 and pycodestyle 2.9.1 were used to test, verify and validate code written in python.
 
-No errors were returned from both.
+No errors were returned from both, except "E501 line too long".
 
-![Python Results](./assets/images/test.JPG)
+![Pep8](./assets/images/PEP8.JPG)
 
 ## Defensive testing data inputs
 Here are the tests that we have conducted to ensure that the program is working correctly:
