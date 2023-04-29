@@ -80,12 +80,76 @@ Or when within his 10 chances he manages to find the exact location of the treas
 - Add a game mode that saves wins in record time.
 
 # Tests
-
+## Syntax test
 Python syntax checker from Extends Class and Python style guide checker from pycodestyle 2.9.1 were used to test, verify and validate code written in python.
 
 No errors were returned from both.
 
 ![Python Results](./assets/images/test.JPG)
+## Defensive testing data inputs
+Here are the tests that we have conducted to ensure that the program is working correctly:
+
+### Test 1: Valid Input
+Description: Enter a valid name and a valid level choice.
+
+Steps:
+
+When prompted, enter a name that contains only alphabets and is at least one character long.
+When prompted, enter a valid level choice (1-3).
+Expected Result: The program should start the game with the given name and level.
+
+### Test 2: Invalid Name
+Description: Enter an invalid name.
+
+Steps:
+
+When prompted, enter a name that contains non-alphabetic characters or is empty.
+Expected Result: The program should display an error message and prompt the user to enter a valid name.
+
+### Test 3: Invalid Level Choice
+Description: Enter an invalid level choice.
+
+Steps:
+
+When prompted, enter a level choice that is not between 1-3.
+Expected Result: The program should display an error message and prompt the user to enter a valid level choice.
+
+### Test 4: Restart Game
+Description: Restart the game without entering the name again.
+
+Steps:
+
+Start the game with a valid name and level choice.
+When prompted to restart the game, enter 'Y' to restart the game.
+When prompted, enter a valid level choice (1-3).
+Expected Result: The program should restart the game with the same name and the new level choice.
+
+### Test 5: Invalid Restart Choice
+Description: Enter an invalid restart choice.
+
+Steps:
+
+Start the game with a valid name and level choice.
+When prompted to restart the game, enter an invalid choice that is not 'Y' or 'N'.
+Expected Result: The program should display an error message and prompt the user to enter a valid restart choice.
+
+### Test 6: Winning the Game
+Description: Win the game by finding the treasure.
+
+Steps:
+
+Start the game with a valid name and level choice.
+Keep playing the game until the treasure is found.
+Expected Result: The program should display a winning message and prompt the user to play again or quit.
+
+### Test 7: Losing the Game
+Description: Lose the game by running out of moves.
+
+Steps:
+
+Start the game with a valid name and level choice.
+Keep playing the game until all moves are used up.
+Expected Result: The program should display a losing message and prompt the user to play again or quit.
 
 # Languages Used
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))

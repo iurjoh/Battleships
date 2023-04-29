@@ -8,7 +8,7 @@ from random import randint
 
 def print_board(board):
     """
-    Creates a 2d board to the game
+    Creates a 2d board of the game
     """
     print("   ", end="")
     for col in range(len(board)):
@@ -69,7 +69,10 @@ def play_game(name, size):
     chest_row, chest_col = place_chest(board)
 
     # print chest location for testing purposes
-    print(f"Chest located at ({chest_row}, {chest_col})")
+    """
+    Used in test phase. Must be commented when deploy.
+    """
+    # print(f"Chest located at ({chest_row}, {chest_col})")
 
     max_guesses = int(size * 1.5)
 
@@ -192,5 +195,6 @@ def start_game():
             break
         else:
             print("Invalid choice. Please enter a number between 1 and 3.")
+
 
 start_game()
