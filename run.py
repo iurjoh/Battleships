@@ -266,5 +266,4 @@ ___/______/______/______/______/______/______/______/______/______
         else:
             print("Invalid choice. Please, enter a number between 1 and 3.")
 
-
 start_game()
