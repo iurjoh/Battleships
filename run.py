@@ -94,7 +94,7 @@ def play_game(name, size):
             if not guess_row_str.isdigit() or not guess_col_str.isdigit():
                 print(
                     f"Invalid option, explorer {name}."
-                    f" Please enter valid numbers between 0 and {size - 1}.")
+                    f" Please, enter valid numbers between 0 and {size - 1}.")
                 continue
 
             guess_row = int(guess_row_str)
@@ -116,8 +116,29 @@ def play_game(name, size):
             # mark treasure location on board
             board[guess_row][guess_col] = "T"
             print_board(board)
-            print('"History may be accurate. But archaeology is precise." - Doug Scott.')
-            print(f"Congratulations, explorer {name}! You found the treasure!")
+            print("""                ______
+             .-'      `-.
+           .'            `.
+          /                \.
+         ;                 ;`
+         |          /      |;
+         ;         / / /   ;|
+         '\       / / /   / ;
+          \`.    / /    .' /
+           `.`-._____.-' .'
+             / /`_____.-'
+            / / /
+           / / /    
+          / / /    "History may be accurate.
+         / / /       
+        / / /       But archaeology is precise."
+       / / /         
+      / / /         ― Doug Scott
+     / / /
+    / / /
+    \/_/                          
+""")
+            print(f"Congratulations explorer {name}! You found the treasure!")
             restart_game(name, size)
             return
 
@@ -126,9 +147,25 @@ def play_game(name, size):
 
     reveal_chest_location(board, chest_row, chest_col)
     print_board(board)
-    print(
-        f"Sorry, explorer {name}. You didn't find the treasure this time."
-        f" The location of the treasure was ({chest_row}, {chest_col}).")
+    
+    print("""
+         ,---,_          ,
+          _>   `'-.  .--'/
+     .--'` ._      `/   <_
+      >,-' ._'.. ..__ . ' '-.       "Failure
+   .-'   .'`         `'.     '.
+    >   / >`-.     .-'< \ , '._\.    is success
+   /    ; '-._>   <_.-' ;  '._>
+   `>  ,/  /___\ /___\  \_  /        in progress."
+   `.-|(|  \_o/  \_o/   |)|`
+       \;        \      ;/           ― Albert Einstein
+         \  .-,   )-.  /
+          /`  .'-'.  `\.
+         ;_.-`.___.'-.;
+""")
+
+    print(f"Sorry, explorer {name}. You didn't find the treasure this time.")
+    print(f"The treasure was hidden in location ({chest_row}, {chest_col}).")
     restart_game(name, size)
 
 
@@ -140,7 +177,7 @@ def restart_game(name, size):
     while not valid_input:
         answer = input(f"Explorer {name}, would you like to start a new Treasure Hunt adventure? (Y/N): ")
         if answer.upper() == "Y":
-            print("Please choose your difficulty level:")
+            print("Please, choose your difficulty level:")
             print("1. Easy (board size: 3x3)")
             print("2. Medium (board size: 5x5)")
             print("3. Hard (board size: 9x9)")
@@ -156,13 +193,13 @@ def restart_game(name, size):
                     play_game(name, 9)
                     break
                 else:
-                    print("Invalid choice. Please enter a number between 1 and 3.")
+                    print("Invalid choice. Please, enter a number between 1 and 3.")
             valid_input = True
         elif answer.upper() == "N":
             print("Thanks for playing! Come back soon!")
             sys.exit()  # exit the program
         else:
-            print("Invalid input. Please enter Y or N.")
+            print("Invalid input. Please, enter Y or N.")
 
 
 # Start the game
@@ -172,36 +209,40 @@ def start_game():
     Starts the Treasure Hunt game.
     """
 
-    print(
-        '********************************************************************'
-        '                   |                  |                     |       '
-        '________________.=""_;=.______________|_____________________|_______'
-        '         |  ,-"_,=""     `"=.|                  |                   '
-        '_________|__"=._o`"-._        `"=.______________|___________________'
-        '                `"=._o`"=._      _`"=._                     |       '
-        '_____________________:=._o "=._."_.-="\'"=.__________________|______'
-        '         |    __.--" , ; `"=._o." ,-"""-._ ".   |                   '
-        '_________|_._"  ,. .` ` `` ,  `"-._"-._   ". \'__|__________________'
-        '           |o`"=._` , "` `; .". ,  "-._"-._; ;              |       '
-        '___________| ;`-.o`"=._; ." ` \'`."\` . "-._ /_______________|______'
-        '         | |o;    `"-.o`"=._``  \'` " ,__.--o;   |                  '
-        '_________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|___________________'
-        '/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____'
-        '___/______/_"=._o--._        ; | ;        ; ;/______/______/______/_'
-        '/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____'
-        '___/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_'
-        '/______/______/______/_____"=.o|o_.--""___/______/______/______/____'
-        '___/______/______/______/______/______/______/______/______/_____ / '
-        '********************************************************************')
+    print("""******************************************************************
+                   |                 |                     |
+________________.=\"\";=.______________|_____________________|_____
+         |  ,-"_,=\"\"     `\"=.|                  |
+_________|__\"=._o`\"-._        `\"=.______________|________________
+                `\"=._o`\"=._      _`\"=._                     |
+_____________________:=._o \"=._.\"_.-=\"'\"=.__________________|____
+         |    __.--\" , ; `\"=._o.\" ,-\"\"\"-._ \".   |
+_________|_._\"  ,. .` ` `` ,  `\"-._\"-._   \". '__|________________
+           |o`\"=._` , \"` `; .\". ,  \"-._\"-._; ;              |
+___________| ;`-.o`\"=._; .\" ` '\"`.\` . \"-._ /_______________|____
+         | |o;    `\"-.o`\"=._``  '\"` \" ,__.--o;  |
+_________|_| ;     (#) `-.o `\"=.`_.--\"_o.-; ;___|_________________
+/______/___|o;._    \"      `\".o|o_.--\"    ;o;____/______/______/__
+___/______/_\"=._o--._        ; | ;        ; ;/______/______/______
+/______/______/__\"=._o--._   ;o|o;     _._;o;____/______/______/__
+___/______/______/____\"=._o._; | ;_.--\"o.--\"_/______/______/______
+/______/______/______/______\"=.o|o_.--\"\"___/______/______/______/_
+___/______/______/______/______/______/______/______/______/______
+   ).-.o.*)    +-+-+-+-+-+-+-+-+ +-+-+-+-+ +-+-+-+-+    ).-.o.*)
+  (:_.:.*(     |T|r|e|a|s|u|r|e| |H|u|n|t| |G|a|m|e|   (:_.:.*(
+   )*.-.o.)                                             )*.-.o.)
+  (-X_.*:(             |b|y| |i|u|r|j|o|h|             (-X_.*:(
+   )-.--.*)    +-+-+-+-+-+-+-+-+ +-+-+-+-+ +-+-+-+-+    )-.--.*)                          
+""")
 
     while True:
-        name = input("Welcome to Treasure Hunt! Please enter your name (only letters): ")
+        name = input("Welcome explorer! Please, enter your name (only letters): ")
         if name.isalpha() and not name.isdigit():
             # Valid name, proceed with the game
             break
         else:
             # Invalid name, ask again
-            print("Invalid name. Please enter a non-empty name with only letters from A to Z.")
+            print("Invalid name. Please, enter a non-empty name with only letters from A to Z.")
 
     while True:
         print("Please, choose your difficulty level:")
@@ -223,7 +264,7 @@ def start_game():
             restart_game(name, 9)
             break
         else:
-            print("Invalid choice. Please enter a number between 1 and 3.")
+            print("Invalid choice. Please, enter a number between 1 and 3.")
 
 
 start_game()
