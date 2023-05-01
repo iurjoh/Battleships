@@ -8,35 +8,50 @@ This game is designed to test Python basic skills acquired in the Code Institute
 
 # How to play
 
-The user is greeted with some basic information about the game such as board size, amount of treasure on the map and attempts to find it. Then you are asked to enter a name.
+The user is greeted with a treasure chest image in ASCII graphic style, and the player are asked to enter a name.
 
-Then some other information is placed and lines of text for immersion in the game context are presented. A map with dimensions of 5x5 is shown on the screen then the game starts.
+After input a valid name (only letters from A-Z) a menu with 3 different map dimensions are presented, each one for a respective game level is displayed. Next, the chosen size, the amount of treasures and available attempts will be shown.
+
+The player is then invited to choose a location to begin their exploration. Depending on the level the player chose a 3x3, 5x5 or 9x9 map will be presented and then the player will be invited to choose a number between 0 and the maximum coordinate on the right of the map (2, 4 or 8).
 
 Each round the user must enter a new coordinate with number to a row and a column subsequently.
 
 If the coordinates is outside the map dimensions or has already been chosen in a previous turn, the user will not lose any attempt but must enter new valid coordinates.
 
-If he chooses a location where the treasure is not, he will have a reduced chance of his total attempts by a maximum of 10, until he has no more chance and loses the game.
+If chooses a location where the treasure is not, will have a reduced chance of his total attempts by one, until has no more chance and loses the game.
 
-If you find the treasure before the attempts are over, you will receive a victory message.
+If the player do not find the treasure before the attempts are over, will receive citation and an end game message, followed for a question for play again or quit.
+
+If the player find the treasure before the attempts are over, will receive citation and victory message, followed for a question for play again or quit.
 
 # Features
 ## Existing Features
 ### Title and basic information
 
-A title with a clean design to introduce users to the game.
+A title screen with a graphic design to introduce users to the game.
 
-![Title](./assets/images/header.JPG)
+![Welcome](./assets/images/welcome.JPG)
 
-### Introduction
+### Welcome and Name Input
 
-A small introduction to contextualize the player in the game environment. In this field the user must choose a nickname and then receive lines of text to give more immersion.
+A short welcome greeting is presented. Then the player is invited to enter a valid name
 
-![Instructions](./assets/images/introduction.JPG)
+![Name input](./assets/images/name.JPG)
+
+### Game level
+
+The player must choose between 3 predetermined levels of difficulty. Being:
+1. Easy (board size: 3x3)
+2. Medium (board size: 5x5)
+3. Hard (board size: 9x9)
+
+Here, only numbers 1, 2 and 3 are accepted as inputs.
+
+![Level](./assets/images/level.JPG)
 
 ### Board
 
-In this area the game itself develops. A grid composed of 25 cells arranged in a 5x5 matrix where only a certain coordinate contains the treasure.
+In this area the game itself develops. A grid composed of a matrix cells where only a certain coordinate contains the treasure.
 
 With each new game, this treasure is placed at random for the user to try to find it, so the replay factor makes the game more inviting.
 
@@ -44,33 +59,55 @@ With each new game, this treasure is placed at random for the user to try to fin
 
 ### Turns
 
-All the player's possibilities are shown on the map and each turn the user must choose a number between 0 and 4 for both the row and the column.
+All the player's possibilities are shown on the map and each turn the user must choose a number between 0 and the right border (maximum size of the matriz -1) for both the row and the column.
 
 The chosen coordinates will be are marked on the map with an X. In these places there were no treasures, so they should not be re-chosen. A new turn will start again asking the player what the new coordinates will be and the player will have one less try to find the treasure.
 
 If the location has the treasure hidden in it, then the user has discovered it and won the game.
 
-![No treasure map marked](./assets/images/no%20treasure%20map.JPG)
+![Guesses](./assets/images/guesses.JPG)
 
 ### Input validation and error-checking
 
-If the coordinates are off the map, that is, with numbers that are not between 0 and 4 for both rows and columns, an error message will be displayed on the screen but no attempt will be lost by the user, which will keep their chances. same as the previous turn.
+If the coordinates are off the map, that is, with numbers that are not between 0 and maximum range of the chosen level, for both rows and columns, an error message will be displayed on the screen but no attempt will be lost by the user, which will keep their chances. Same as the previous turn.
 
-![Error out of map](./assets/images/error%20out%20of%20map.JPG)
+![Outside](./assets/images/outside.JPG)
 
 If the coordinates are equal to some that had been previously chosen by the user, an error message will be displayed on the screen and, in the same way as the previous one, no penalty will occur in relation to the user's attempts.
 
-![Error same coordinates](./assets/images/error%20same%20coordinates.JPG)
+![Same](./assets/images/same.JPG)
+
+If the player enters any value that is not valid, this being an empty space, non-integer numbers, negatives, fractions, letters, signs or special characters, an error will be displayed, the player will be invited to choose his coordinates again, this time using only numbers valid for chosen game level(size), without losing a previous attempt.
+
+![Invalid](./assets/images/invalid.JPG)
 
 ### End Game Rules
 
-The game will end when the user has used up all their attempts and has not found the treasure.
+#### Treasure Not Found
 
-![Loss](./assets/images/loss.JPG)
+After spending all available attempts, the player did not find the treasure and so the game comes to an end with the player's defeat.
 
-Or when within his 10 chances he manages to find the exact location of the treasure.
+Note that all the player's attempts have been recorded on the board with "X", while the location of the treasure is shown with the letter "T". This location is also written in the game.
+
+![Defeat](./assets/images/defeat.JPG)
+
+#### Treasure Found
+
+When within his chances the player manages to find the exact location of the treasure a win message will be displeyd, and the location of the treasure is also displayed with the letter "T" on the board.
 
 ![Win](./assets/images/win.JPG)
+
+## Restart
+
+When the game comes to an end, in both winning and losing situations, the player will be able to choose whether to continue playing.
+
+If you accept, you will choose the desired difficulty for your new game again and then the loop of a new game starts keeping the player's name, however, the treasure will have its location randomized again.
+
+![restartyes](./assets/images/restartyes.JPG)
+
+If the player does not want to continue playing at the end of a game, he will find a thank you message for having played and will be invited to come back soon.
+
+![restarno](./assets/images/restartno.JPG)
 
 ## Features to Increment
 - Add a vs. CPU mode to play against the computer.
@@ -83,9 +120,12 @@ Or when within his 10 chances he manages to find the exact location of the treas
 ## Syntax test
 Python syntax checker from Extends Class and Python style guide checker from flake8 and pycodestyle 2.9.1 were used to test, verify and validate code written in python.
 
-No errors were returned from both, except "E501 line too long".
+No major errors were returned from both, except "E501 line too long" caused for some text phrases inside the game, and "W605 invalid escape sequence", "W291 trailing whitespace", "W293 blank line contains whitespace" caused by game graphics using ASCII art style.
 
-![Pep8](./assets/images/PEP8.JPG)
+![PEP8](./assets/images/PEP8.JPG)
+![flake8](./assets/images/flake8.JPG)
+![pycodestyle](./assets/images/pycodestyle.JPG)
+![run.pyterminal](./assets/images/runpyterminal.JPG)
 
 ## Defensive testing data inputs
 Here are the tests that we have conducted to ensure that the program is working correctly:
@@ -200,7 +240,8 @@ Sites such as:
 - [Youtube](https://www.youtube.com/) tutorials to learn using in a practical way some of the methods necessary to implement the desired functions for the game;
 - [Pycodestyle](https://pypi.org/project/pycodestyle/) used to validade my python code;
 - [Extends Class](https://extendsclass.com/python-tester.html) used to test my python code syntax;
-- [Slack](https://slack.com/) communities to ask questions and access answers to questions that I found in the development of the site.
+- [Slack](https://slack.com/) communities to ask questions and access answers to questions that I found in the development of the site;
+- [ASCII](https://ascii.co.uk/) where I found all the necessary material for the graphic arts present in the game and the base to create modified projects by myself.
 
 ## Media
 
