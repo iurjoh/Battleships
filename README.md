@@ -2,7 +2,7 @@
 
 Play the game [here](https://iurjoh-treasure-hunt.herokuapp.com/)
 
-This game is designed to test Python basic skills acquired in the Code Institute's Full Stack developer course. This game is similar to a classic Battlefield game, built in to be played by a user trying to find treasure a map through the use of row and column instructions.
+This game is designed to test Python basic skills acquired in the Code Institute's Full Stack developer course. This game is similar to a classic Battlefield game, built in to be played by a user trying to find one treasure in a map through the use of row and column instructions.
 
 ![Treasure Hunt](./assets/images/mockup.JPG)
 
