@@ -122,10 +122,10 @@ Python syntax checker from Extends Class and Python style guide checker from fla
 
 No major errors were returned from both, except "E501 line too long" caused for some text phrases inside the game, and "W605 invalid escape sequence", "W291 trailing whitespace", "W293 blank line contains whitespace" caused by game graphics using ASCII art style.
 
-![PEP8](./assets/images/PEP8.JPG)
-![flake8](./assets/images/flake8.JPG)
-![pycodestyle](./assets/images/pycodestyle.JPG)
-![run.pyterminal](./assets/images/runpyterminal.JPG)
+Code Institute PEP8 Checker - ["CI Python Linter"](https://pep8ci.herokuapp.com/) also used and return the same errors.
+
+![PEP8CI1](./assets/images/PEP8CI1.JPG)
+![PEP8CI2](./assets/images/PEP8CI2.JPG)
 
 ## Defensive testing data inputs
 Here are the tests that we have conducted to ensure that the program is working correctly:
