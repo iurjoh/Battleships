@@ -72,7 +72,7 @@ def play_game(name, size):
     """
     Used in test phase. Must be commented when deploy.
     """
-    print(f"Chest located at ({chest_row}, {chest_col})")
+    # print(f"Chest located at ({chest_row}, {chest_col})")
 
     max_guesses = int(size * 1.5)
 
