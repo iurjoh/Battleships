@@ -1,6 +1,6 @@
 # Treasure Hunt game
 
-Play the game [here](https://iurjoh-treasure-hunt.herokuapp.com/)
+Play the game [here](https://iurjoh-treasure-hunt.herokuapp.com/).
 
 This game is designed to test Python basic skills acquired in the Code Institute's Full Stack developer course. This game is similar to a classic Battlefield game, built in to be played by a user trying to find one treasure in a map through the use of row and column instructions.
 
@@ -10,19 +10,20 @@ This game is designed to test Python basic skills acquired in the Code Institute
 
 The user is greeted with a treasure chest image in ASCII graphic style, and the player are asked to enter a name.
 
-After input a valid name (only letters from A-Z) a menu with 3 different map dimensions are presented, each one for a respective game level is displayed. Next, the chosen size, the amount of treasures and available attempts will be shown.
+After input a valid name (only letters from A-Z) a menu with three different map dimensions are presented, each one for a respective game level is displayed.
 
-The player is then invited to choose a location to begin their exploration. Depending on the level the player chose a 3x3, 5x5 or 9x9 map will be presented and then the player will be invited to choose a number between 0 and the maximum coordinate on the right of the map (2, 4 or 8).
+
+After chosen a size, the player is then invited to choose a location to begin their exploration. Depending on the level the player chose a 3x3, 5x5 or 9x9 map will be presented and then the player will be invited to choose a number between 0 and the maximum coordinate on the right of the map (2, 4 or 8).
 
 Each round the user must enter a new coordinate with number to a row and a column subsequently.
 
-If the coordinates is outside the map dimensions or has already been chosen in a previous turn, the user will not lose any attempt but must enter new valid coordinates.
+If the coordinates are outside the map dimensions or has already been chosen in a previous turn, the user will not lose any attempt but must enter new valid coordinates.
 
 If chooses a location where the treasure is not, will have a reduced chance of his total attempts by one, until has no more chance and loses the game.
 
-If the player do not find the treasure before the attempts are over, will receive citation and an end game message, followed for a question for play again or quit.
+If the player does not find the treasure before the attempts are over, will receive citation and an end game message, followed for a question for play again or quit.
 
-If the player find the treasure before the attempts are over, will receive citation and victory message, followed for a question for play again or quit.
+If the player finds the treasure before the attempts are over, will receive citation and victory message, followed for a question for play again or quit.
 
 # Features
 ## Existing Features
@@ -34,16 +35,16 @@ A title screen with a graphic design to introduce users to the game.
 
 ### Welcome and Name Input
 
-A short welcome greeting is presented. Then the player is invited to enter a valid name
+A short welcome greeting is presented. Then the player is invited to enter a valid name.
 
 ![Name input](./assets/images/name.JPG)
 
 ### Game level
 
 The player must choose between 3 predetermined levels of difficulty. Being:
-1. Easy (board size: 3x3)
-2. Medium (board size: 5x5)
-3. Hard (board size: 9x9)
+1. Easy (Board size: 3x3)
+2. Medium (Board size: 5x5)
+3. Hard (Board size: 9x9)
 
 Here, only numbers 1, 2 and 3 are accepted as inputs.
 
@@ -51,7 +52,7 @@ Here, only numbers 1, 2 and 3 are accepted as inputs.
 
 ### Board
 
-In this area the game itself develops. A grid composed of a matrix cells where only a certain coordinate contains the treasure.
+In this area the game itself develops. A grid composed of a matrix cell where only a certain coordinate contains the treasure.
 
 With each new game, this treasure is placed at random for the user to try to find it, so the replay factor makes the game more inviting.
 
@@ -59,9 +60,9 @@ With each new game, this treasure is placed at random for the user to try to fin
 
 ### Turns
 
-All the player's possibilities are shown on the map and each turn the user must choose a number between 0 and the right border (maximum size of the matriz -1) for both the row and the column.
+All the player's possibilities are shown on the map and each turn the user must choose a number between 0 and the right border (maximum size of the matrix -1) for both the row and the column.
 
-The chosen coordinates will be are marked on the map with an X. In these places there were no treasures, so they should not be re-chosen. A new turn will start again asking the player what the new coordinates will be and the player will have one less try to find the treasure.
+The chosen coordinates will be are marked on the map with an X. In these places there were no treasures, so they should not be re-chosen. A new turn will again start asking the player what the new coordinates will be and the player will have one less try to find the treasure.
 
 If the location has the treasure hidden in it, then the user has discovered it and won the game.
 
@@ -218,18 +219,18 @@ Expected Result: The program should display a losing message and prompt the user
 
 # Deployment
 This game was deployed using Code Institute's mock terminal for Heroku.
-- First fork or clone this repository
-- Create a new Heroku app
-- Set the buildbacks to Python and NodeJS in that order
-- Link the Heroku app to the GitHub repository
-- Click on deploy 
+- First fork or clone this repository.
+- Create a new Heroku app.
+- Set the buildbacks to Python and NodeJS in that order.
+- Link the Heroku app to the GitHub repository.
+- Click on deploy.
 
 The link to the deployed game at Heroku is: https://git.heroku.com/iurjoh-treasure-hunt.git
 
 The full file was also deployed in my GitHub repository. The steps are as follows:
 - In the GitHub repository, click on Settings tab;
 - Navigate to the menu on the left side and select Pages;
-- Set the source in the Build and deployment item as "Deploy from a branch". Then, in the Branch item, the Main option was chosen, /(root) folder and finishing the settings with the Save button.
+- Set the source in the Build and deployment item as "Deploy from a branch." Then, in the Branch item, the Main option was chosen, /(root) folder and finishing the settings with the Save button.
 
 The link to the deployed website at GitHub is: https://iurjoh.github.io/Treasure-Hunt/
 
@@ -242,7 +243,7 @@ Sites such as:
 - [Stack Overflow](https://stackoverflow.co/) were used at various times to clear up recurring doubts,
 - [Code Institute](https://learn.codeinstitute.net/) to review material of study explanatory videos and guides on how to set up a complete website;
 - [GitHub](https://github.com/) to better understand other projects;
-- [Google](https://www.google.com) for more information on subjects related to the that I had to study during the creation of the site;
+- [Google](https://www.google.com) for more information on subjects related to the that, I had to study during the creation of the site;
 - [Wikipedia](https://en.wikipedia.org/wiki/Main_Page) to understand concepts about Python;
 - [Youtube](https://www.youtube.com/) tutorials to learn using in a practical way some of the methods necessary to implement the desired functions for the game;
 - [Pycodestyle](https://pypi.org/project/pycodestyle/) used to validade my python code;
