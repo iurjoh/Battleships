@@ -137,6 +137,7 @@ Steps:
 
 When prompted, enter a non-empty name that contains letters from A to Z and is at least one character long.
 When prompted, enter a valid level choice (1-3).
+
 Expected Result: The program should start the game with the given name and level.
 
 ![Test1](./assets/images/test1.JPG)
@@ -147,6 +148,7 @@ Description: Enter an invalid name.
 Steps:
 
 When prompted, enter a name that contains non-alphabetic characters or is empty.
+
 Expected Result: The program should display an error message and prompt the user to enter a valid name.
 
 ![Test2](./assets/images/test2.JPG)
@@ -157,6 +159,7 @@ Description: Enter an invalid level choice.
 Steps:
 
 When prompted, enter a level choice that is not between 1-3.
+
 Expected Result: The program should display an error message and prompt the user to enter a valid level choice.
 
 ![Test3](./assets/images/test3.JPG)
@@ -169,6 +172,7 @@ Steps:
 Start the game with a valid name and level choice.
 When prompted to restart the game, enter 'Y' to restart the game.
 When prompted, enter a valid level choice (1-3).
+
 Expected Result: The program should restart the game with the same name and the new level choice.
 
 ![Test4](./assets/images/test4.JPG)
@@ -180,6 +184,7 @@ Steps:
 
 Start the game with a valid name and level choice.
 When prompted to restart the game, enter an invalid choice that is not 'Y' or 'N'.
+
 Expected Result: The program should display an error message and prompt the user to enter a valid restart choice.
 
 ![Test5](./assets/images/test5.JPG)
@@ -191,6 +196,7 @@ Steps:
 
 Start the game with a valid name and level choice.
 Keep playing the game until the treasure is found.
+
 Expected Result: The program should display a winning message and prompt the user to play again or quit.
 
 ![Test6](./assets/images/test6.JPG)
@@ -202,6 +208,7 @@ Steps:
 
 Start the game with a valid name and level choice.
 Keep playing the game until all moves are used up.
+
 Expected Result: The program should display a losing message and prompt the user to play again or quit.
 
 ![Test7](./assets/images/test7.JPG)
